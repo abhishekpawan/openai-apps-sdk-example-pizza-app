@@ -103,15 +103,16 @@ const widgets: LoanWidget[] = [
     html: readWidgetHtml("pizzaz-albums"),
     responseText: "Rendered loan products gallery!",
   },
-  {
-    id: "pizza-list",
-    title: "Show Loan List",
-    templateUri: "ui://widget/pizza-list.html",
-    invoking: "Loading loan list",
-    invoked: "Displayed loan list",
-    html: readWidgetHtml("pizzaz-list"),
-    responseText: "Rendered loan list!",
-  },
+  // Disabled pizza-list tool to prioritize carousel
+  // {
+  //   id: "pizza-list",
+  //   title: "Show Loan List",
+  //   templateUri: "ui://widget/pizza-list.html",
+  //   invoking: "Loading loan list",
+  //   invoked: "Displayed loan list",
+  //   html: readWidgetHtml("pizzaz-list"),
+  //   responseText: "Rendered loan list!",
+  // },
 ];
 
 const widgetsById = new Map<string, LoanWidget>();
