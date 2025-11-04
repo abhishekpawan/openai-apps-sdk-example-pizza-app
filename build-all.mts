@@ -162,7 +162,7 @@ console.groupEnd();
 
 console.log("new hash: ", h);
 
-const defaultBaseUrl = "http://localhost:4444";
+const defaultBaseUrl = "https://openai-app-sdk-examples-assets.onrender.com";
 const baseUrlCandidate = process.env.BASE_URL?.trim() ?? "";
 const baseUrlRaw = baseUrlCandidate.length > 0 ? baseUrlCandidate : defaultBaseUrl;
 const normalizedBaseUrl = baseUrlRaw.replace(/\/+$/, "") || defaultBaseUrl;
