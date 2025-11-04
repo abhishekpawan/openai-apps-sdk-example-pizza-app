@@ -33,9 +33,9 @@ function App() {
   }, [emblaApi]);
 
   return (
-    <div className="antialiased relative w-full py-5" style={{ backgroundColor: '#002953' }}>
+    <div className="antialiased relative w-full py-5" style={{ paddingLeft: '20px'}}>
       <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-4 max-sm:mx-5 items-stretch">
+        <div className="flex gap-4 max-sm:mx-5 items-stretch p-4">
           {loanProducts.map((loanProduct) => (
             <PlaceCard key={loanProduct.id} place={loanProduct} />
           ))}
