@@ -1,0 +1,247 @@
+{
+  "loanTypes": {
+    "personal-loan": {
+      "id": "personal-loan",
+      "name": "Personal Loan",
+      "tagline": "Quick approval with minimal documentation",
+      "description": "Get instant personal loans with minimal documentation and quick disbursal. Perfect for all your personal needs - from weddings to medical emergencies, education to home renovation.",
+      "interestRate": "11% p.a.",
+      "minRate": "10.99",
+      "maxRate": "24",
+      "loanAmount": "₹50,000 - ₹40 Lakh",
+      "tenure": "12 - 84 months",
+      "processingFee": "Up to 3.93% + GST",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/SALPL_PDP_image_1?scl=1&fmt=png-alpha",
+      "images": [
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/SALPL_PDP_image_1?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/gcc-07e79c9f-a3a6-42eb-b96f-d4e84e0509ad-1?scl=1",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/SALPL_PDP_image_2?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/SALPL_PDP_image_3?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/SALPL_PDP_image_4?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinancestage/SALPL_PDP_image_5?scl=1&fmt=png-alpha"
+      ],
+      "features": [
+        "Quick disbursal within 24 hours",
+        "Minimal documentation required",
+        "Flexible repayment tenure",
+        "No collateral needed",
+        "Pre-approved offers for existing customers",
+        "Part-payment facility available"
+      ],
+      "eligibility": [
+        "Age: 21 to 67 years",
+        "Employment: Salaried or Self-employed",
+        "Minimum monthly income: ₹25,000",
+        "Credit Score: 700+ preferred"
+      ],
+      "documents": [
+        "Identity proof (Aadhaar/PAN/Passport)",
+        "Address proof",
+        "Income proof (Salary slips/ITR)",
+        "Bank statements (Last 3 months)",
+        "Employment proof"
+      ],
+      "applyUrl": "https://www.bajajfinserv.in/personal-loan"
+    },
+    "gold-loan": {
+      "id": "gold-loan",
+      "name": "Gold Loan",
+      "tagline": "Instant cash against your gold jewelry",
+      "description": "Unlock the value of your gold with our attractive gold loan schemes. Get instant cash while your gold remains safe with us. Flexible repayment options and lowest interest rates in the market.",
+      "interestRate": "9.5% p.a.",
+      "minRate": "9.50",
+      "maxRate": "15.50",
+      "loanAmount": "₹5,000 - ₹2 Crore",
+      "tenure": "3 - 36 months",
+      "processingFee": "Up to 2% + GST",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/gold-loan-14-08-2025?scl=1&fmt=png-alpha",
+      "images": [
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/GoldLoan_PDP_1?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/gcc-76f6a451-dd0b-438c-8140-ab2f69c70bc4-3?scl=1",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/GoldLoan_PDP_2?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/GoldLoan_PDP_3?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/GoldLoan_PDP_4?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/GoldLoan_PDP_5?scl=1&fmt=png-alpha"
+      ],
+      "features": [
+        "Loan up to 75% of gold value",
+        "Zero prepayment charges",
+        "Flexible repayment options",
+        "Safe and secure storage",
+        "Quick processing within hours",
+        "Overdraft facility available"
+      ],
+      "eligibility": [
+        "Age: 18 years and above",
+        "Valid ID proof required",
+        "Gold jewelry (18-22 carat)",
+        "Must be resident of India"
+      ],
+      "documents": [
+        "Identity proof (Aadhaar/PAN)",
+        "Address proof",
+        "Gold jewelry for pledge",
+        "Gold purchase invoice (if available)"
+      ],
+      "applyUrl": "https://www.bajajfinserv.in/gold-loan"
+    },
+    "home-loan": {
+      "id": "home-loan",
+      "name": "Home Loan",
+      "tagline": "Finance your dream home",
+      "description": "Turn your dream of owning a home into reality with our attractive home loan schemes. Get up to 90% funding of property value with flexible repayment options and competitive interest rates.",
+      "interestRate": "8.5% p.a.",
+      "minRate": "8.50",
+      "maxRate": "12.50",
+      "loanAmount": "₹5 Lakh - ₹10 Crore",
+      "tenure": "60 - 360 months",
+      "processingFee": "Up to 2.5% + GST",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/home-loan-prime-theme?scl=1&fmt=png-alpha",
+      "images": [
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/home-loan-prime-theme?scl=1&fmt=png-alpha"
+      ],
+      "features": [
+        "Up to 90% funding of property value",
+        "Doorstep service available",
+        "Balance transfer facility",
+        "Tax benefits under Section 80C & 24",
+        "Top-up loan facility",
+        "Affordable EMI options"
+      ],
+      "eligibility": [
+        "Age: 23 to 62 years",
+        "Employment: Salaried/Self-employed/Professional",
+        "Minimum annual income: ₹3 Lakh",
+        "Credit Score: 750+ preferred"
+      ],
+      "documents": [
+        "Identity & Address proof",
+        "PAN Card",
+        "Income proof (Last 6 months salary slips/ITR)",
+        "Bank statements (Last 6 months)",
+        "Property documents"
+      ],
+      "applyUrl": "https://www.bajajfinserv.in/home-loan"
+    },
+    "business-loan": {
+      "id": "business-loan",
+      "name": "Business Loan",
+      "tagline": "Grow your business with quick funding",
+      "description": "Fuel your business growth with our collateral-free business loans. Get quick disbursal with minimal documentation. Perfect for working capital, expansion, equipment purchase, or inventory management.",
+      "interestRate": "12% p.a.",
+      "minRate": "11.99",
+      "maxRate": "24",
+      "loanAmount": "₹1 Lakh - ₹80 Lakh",
+      "tenure": "12 - 84 months",
+      "processingFee": "Up to 3.5% + GST",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha",
+      "images": [
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/gcc-46222e5f-ca19-4c17-8718-23a56e0c8ee5?scl=1",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/BL_PDP_image_2?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/BL_PDP_image_5?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/BL_PDP_image_3?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/BL_PDP_image_1?scl=1&fmt=png-alpha"
+      ],
+      "features": [
+        "No collateral required",
+        "Quick disbursal within 48 hours",
+        "Flexible repayment options",
+        "Minimal documentation",
+        "Pre-approved offers",
+        "Free financial advisory"
+      ],
+      "eligibility": [
+        "Business vintage: Minimum 3 years",
+        "Age: 25 to 65 years",
+        "Annual turnover: Minimum ₹10 Lakh",
+        "Good credit score required"
+      ],
+      "documents": [
+        "Identity & Address proof",
+        "Business registration documents",
+        "GST returns (Last 1 year)",
+        "Bank statements (Last 12 months)",
+        "ITR (Last 2 years)",
+        "Business proof"
+      ],
+      "applyUrl": "https://www.bajajfinserv.in/business-loan"
+    },
+    "car-loan": {
+      "id": "car-loan",
+      "name": "Car Loan",
+      "tagline": "Finance your dream car",
+      "description": "Drive home your dream car with our attractive car loan schemes. Get up to 100% on-road price funding for new and used cars with quick approval and minimal documentation.",
+      "interestRate": "8.5% p.a.",
+      "minRate": "8.50",
+      "maxRate": "14",
+      "loanAmount": "₹1 Lakh - ₹1 Crore",
+      "tenure": "12 - 84 months",
+      "processingFee": "Up to 2.75% + GST",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/electronics-on-emis-prime-theme?scl=1&fmt=png-alpha",
+      "images": [
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/electronics-on-emis-prime-theme?scl=1&fmt=png-alpha"
+      ],
+      "features": [
+        "Up to 100% on-road price funding",
+        "Quick approval within 48 hours",
+        "Minimal documentation",
+        "Flexible tenure options",
+        "Low EMI options available",
+        "Online application process"
+      ],
+      "eligibility": [
+        "Age: 21 to 65 years",
+        "Employment: Salaried/Self-employed",
+        "Minimum monthly income: ₹25,000",
+        "Valid driving license required"
+      ],
+      "documents": [
+        "Identity proof (Aadhaar/PAN)",
+        "Address proof",
+        "Income proof",
+        "Bank statements (Last 3 months)",
+        "Driving license"
+      ],
+      "applyUrl": "https://www.bajajfinserv.in/two-wheeler-loan"
+    },
+    "loan-against-property": {
+      "id": "loan-against-property",
+      "name": "Loan Against Property",
+      "tagline": "High value loans with flexible usage",
+      "description": "Unlock the value of your property with our loan against property scheme. Get high loan amounts up to ₹5 crore with flexible usage options for any personal or business needs.",
+      "interestRate": "10% p.a.",
+      "minRate": "10",
+      "maxRate": "16",
+      "loanAmount": "₹10 Lakh - ₹5 Crore",
+      "tenure": "60 - 240 months",
+      "processingFee": "Up to 3% + GST",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/loans-for-personal-needs-lap-bt-v1?scl=1&fmt=png-alpha",
+      "images": [
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/loans-for-personal-needs-lap-bt-v1?scl=1&fmt=png-alpha"
+      ],
+      "features": [
+        "Loan up to 70% of property value",
+        "Flexible end-use options",
+        "Longer repayment tenure",
+        "Lower interest rates",
+        "Top-up facility available",
+        "Tax benefits applicable"
+      ],
+      "eligibility": [
+        "Age: 25 to 70 years",
+        "Property owner (Residential/Commercial)",
+        "Regular income source required",
+        "Good credit history"
+      ],
+      "documents": [
+        "Identity & Address proof",
+        "PAN Card",
+        "Income proof",
+        "Bank statements (Last 6 months)",
+        "Property ownership documents",
+        "Property valuation report"
+      ],
+      "applyUrl": "https://www.bajajfinserv.in/loan-against-property"
+    }
+  }
+}

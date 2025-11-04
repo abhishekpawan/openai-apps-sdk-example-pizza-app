@@ -43,6 +43,7 @@ function multiEntryDevEndpoints(options: {
     "pizzaz-albums": "Loan Products Gallery",
     "pizzaz-carousel": "Loan Products Carousel",
     "pizzaz-list": "Loan Products List",
+    "loan-details": "Loan Details",
   };
 
   const getDisplayName = (name: string): string => {

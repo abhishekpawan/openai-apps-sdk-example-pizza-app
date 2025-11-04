@@ -94,6 +94,15 @@ const widgets: LoanWidget[] = [
     html: readWidgetHtml("pizzaz-carousel"),
     responseText: "Rendered loan list!",
   },
+  {
+    id: "loan-details",
+    title: "Show Loan Details",
+    templateUri: "ui://widget/loan-details.html",
+    invoking: "Loading loan details",
+    invoked: "Displayed loan details",
+    html: readWidgetHtml("loan-details"),
+    responseText: "Rendered detailed loan information!",
+  },
   // {
   //   id: "pizza-albums",
   //   title: "Show Loan Products",
