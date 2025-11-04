@@ -1,0 +1,67 @@
+{
+  "loanProducts": [
+    {
+      "id": "personal-loan",
+      "name": "Personal Loan",
+      "description": "Quick approval with minimal documentation for all your personal needs.",
+      "rating": 4.8,
+      "interestRate": "11% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/personal-loan"
+    },
+    {
+      "id": "gold-loan",
+      "name": "Gold Loan",
+      "description": "Get instant cash against your gold jewelry with lowest interest rates.",
+      "rating": 4.9,
+      "interestRate": "9.5% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/gold-loan-14-08-2025?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/gold-loan"
+    },
+    {
+      "id": "home-loan",
+      "name": "Home Loan",
+      "description": "Finance your dream home with attractive rates and up to 90% funding.",
+      "rating": 4.7,
+      "interestRate": "8.5% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/home-loan-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/home-loan"
+    },
+    {
+      "id": "business-loan",
+      "name": "Business Loan",
+      "description": "Grow your business with quick disbursal and collateral-free loans.",
+      "rating": 4.6,
+      "interestRate": "12% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/business-loan"
+    },
+    {
+      "id": "car-loan",
+      "name": "Car Loan",
+      "description": "Finance new and used cars with up to 100% on-road price funding.",
+      "rating": 4.7,
+      "interestRate": "8.5% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/electronics-on-emis-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/two-wheeler-loan"
+    },
+    {
+      "id": "electronics-emi",
+      "name": "Electronics on EMI",
+      "description": "Buy smartphones, laptops, TVs with zero down payment and easy EMIs.",
+      "rating": 4.8,
+      "interestRate": "0% EMI",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/electronics-on-emis-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/emi-store"
+    },
+    {
+      "id": "loan-against-property",
+      "name": "Loan Against Property",
+      "description": "High loan amount up to ₹5 crore with flexible usage options.",
+      "rating": 4.5,
+      "interestRate": "10% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/loans-for-personal-needs-lap-bt-v1?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/loan-against-property"
+    }
+  ]
+}

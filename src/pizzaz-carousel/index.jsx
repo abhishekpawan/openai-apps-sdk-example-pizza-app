@@ -2,11 +2,11 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import markers from "../pizzaz/markers.json";
+import loansData from "./loans.json";
 import PlaceCard from "./PlaceCard";
 
 function App() {
-  const places = markers?.places || [];
+  const loanProducts = loansData?.loanProducts || [];
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
     loop: false,
@@ -33,11 +33,11 @@ function App() {
   }, [emblaApi]);
 
   return (
-    <div className="antialiased relative w-full text-black py-5 bg-white">
+    <div className="antialiased relative w-full py-5" style={{ backgroundColor: '#002953' }}>
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex gap-4 max-sm:mx-5 items-stretch">
-          {places.map((place) => (
-            <PlaceCard key={place.id} place={place} />
+          {loanProducts.map((loanProduct) => (
+            <PlaceCard key={loanProduct.id} place={loanProduct} />
           ))}
         </div>
       </div>
@@ -50,8 +50,9 @@ function App() {
         }
       >
         <div
-          className="h-full w-full border-l border-black/15 bg-gradient-to-r from-black/10 to-transparent"
+          className="h-full w-full border-l bg-gradient-to-r from-[#ff8900]/30 to-transparent"
           style={{
+            borderColor: '#ff8900',
             WebkitMaskImage:
               "linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)",
             maskImage:
@@ -67,8 +68,9 @@ function App() {
         }
       >
         <div
-          className="h-full w-full border-r border-black/15 bg-gradient-to-l from-black/10 to-transparent"
+          className="h-full w-full border-r bg-gradient-to-l from-[#ff8900]/30 to-transparent"
           style={{
+            borderColor: '#ff8900',
             WebkitMaskImage:
               "linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)",
             maskImage:
@@ -79,7 +81,8 @@ function App() {
       {canPrev && (
         <button
           aria-label="Previous"
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-white text-black shadow-lg ring ring-black/5 hover:bg-white"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full shadow-lg ring"
+          style={{ backgroundColor: '#ff8900', color: 'white', ringColor: 'rgba(255, 137, 0, 0.3)' }}
           onClick={() => emblaApi && emblaApi.scrollPrev()}
           type="button"
         >
@@ -93,7 +96,8 @@ function App() {
       {canNext && (
         <button
           aria-label="Next"
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-white text-black shadow-lg ring ring-black/5 hover:bg-white"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full shadow-lg ring"
+          style={{ backgroundColor: '#ff8900', color: 'white', ringColor: 'rgba(255, 137, 0, 0.3)' }}
           onClick={() => emblaApi && emblaApi.scrollNext()}
           type="button"
         >

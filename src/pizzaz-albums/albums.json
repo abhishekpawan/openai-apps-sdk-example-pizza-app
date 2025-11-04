@@ -1,110 +1,138 @@
 {
-  "albums": [
+  "loanTypes": [
     {
-      "id": "summer-escape",
-      "title": "Summer Slice",
-      "cover": "https://persistent.oaistatic.com/pizzaz/pizzaz-1.png",
-      "photos": [
+      "id": "personal-loan",
+      "title": "Personal Loan",
+      "cover": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/personal-loan",
+      "details": [
         {
-          "id": "s1",
-          "title": "Waves",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-2.png"
+          "id": "pl1",
+          "title": "Quick Approval",
+          "description": "Get instant approval with minimal documentation",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha"
         },
         {
-          "id": "s2",
-          "title": "Palm trees",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-3.png"
+          "id": "pl2",
+          "title": "Flexible Tenure",
+          "description": "Repayment tenure from 12 to 60 months",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha"
         },
         {
-          "id": "s3",
-          "title": "Sunset",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-6.png"
+          "id": "pl3",
+          "title": "Low Interest Rates",
+          "description": "Starting from 11% per annum",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha"
         }
       ]
     },
     {
-      "id": "city-lights",
-      "title": "Pepperoni Nights",
-      "cover": "https://persistent.oaistatic.com/pizzaz/pizzaz-4.png",
-      "photos": [
+      "id": "gold-loan",
+      "title": "Gold Loan",
+      "cover": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/gold-loan-14-08-2025?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/gold-loan",
+      "details": [
         {
-          "id": "c1",
-          "title": "Downtown",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-5.png"
+          "id": "gl1",
+          "title": "Quick Cash",
+          "description": "Get instant cash against your gold jewelry",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/gold-loan-14-08-2025?scl=1&fmt=png-alpha"
         },
         {
-          "id": "c2",
-          "title": "Neon",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-1.png"
+          "id": "gl2",
+          "title": "Lowest Interest Rates",
+          "description": "Competitive rates starting from 9.5% p.a.",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/gold-loan-14-08-2025?scl=1&fmt=png-alpha"
         },
         {
-          "id": "c3",
-          "title": "Streets",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-2.png"
+          "id": "gl3",
+          "title": "Safe & Secure",
+          "description": "Your gold is fully insured and secure",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/gold-loan-14-08-2025?scl=1&fmt=png-alpha"
         }
       ]
     },
     {
-      "id": "into-the-woods",
-      "title": "Truffle Forest",
-      "cover": "https://persistent.oaistatic.com/pizzaz/pizzaz-3.png",
-      "photos": [
+      "id": "home-loan",
+      "title": "Home Loan",
+      "cover": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/home-loan-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/home-loan",
+      "details": [
         {
-          "id": "n1",
-          "title": "Forest path",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-6.png"
+          "id": "hl1",
+          "title": "Dream Home",
+          "description": "Finance your dream home with attractive rates",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/home-loan-prime-theme?scl=1&fmt=png-alpha"
         },
         {
-          "id": "n2",
-          "title": "Misty",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-4.png"
+          "id": "hl2",
+          "title": "Up to 90% Funding",
+          "description": "High loan-to-value ratio",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/home-loan-prime-theme?scl=1&fmt=png-alpha"
         },
         {
-          "id": "n3",
-          "title": "Waterfall",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-5.png"
+          "id": "hl3",
+          "title": "Long Tenure",
+          "description": "Repayment up to 30 years",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/home-loan-prime-theme?scl=1&fmt=png-alpha"
         }
       ]
     },
     {
-      "id": "pizza-tour",
-      "title": "Pizza tour",
-      "cover": "https://persistent.oaistatic.com/pizzaz/pizzaz-1.png",
-      "photos": [
+      "id": "electronics-emi",
+      "title": "Electronics on EMI",
+      "cover": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/electronics-on-emis-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/emi-store",
+      "details": [
         {
-          "id": "tonys-pizza-napoletana",
-          "title": "Tony's Pizza Napoletana",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-2.png"
+          "id": "ee1",
+          "title": "Zero Down Payment",
+          "description": "Buy electronics with no upfront payment",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/electronics-on-emis-prime-theme?scl=1&fmt=png-alpha"
         },
         {
-          "id": "golden-boy-pizza",
-          "title": "Golden Boy Pizza",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-3.png"
+          "id": "ee2",
+          "title": "Easy EMI Options",
+          "description": "Flexible repayment plans from 3 to 24 months",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/electronics-on-emis-prime-theme?scl=1&fmt=png-alpha"
         },
         {
-          "id": "pizzeria-delfina-mission",
-          "title": "Pizzeria Delfina (Mission)",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-6.png"
+          "id": "ee3",
+          "title": "Wide Range",
+          "description": "Smartphones, laptops, TVs and more",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/electronics-on-emis-prime-theme?scl=1&fmt=png-alpha"
         },
         {
-          "id": "ragazza",
-          "title": "Ragazza",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-4.png"
+          "id": "ee4",
+          "title": "Instant Approval",
+          "description": "Quick processing and approval",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/electronics-on-emis-prime-theme?scl=1&fmt=png-alpha"
+        }
+      ]
+    },
+    {
+      "id": "loan-against-property",
+      "title": "Loan Against Property",
+      "cover": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/loans-for-personal-needs-lap-bt-v1?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/loan-against-property",
+      "details": [
+        {
+          "id": "lap1",
+          "title": "High Loan Amount",
+          "description": "Get loans up to ₹5 crore",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/loans-for-personal-needs-lap-bt-v1?scl=1&fmt=png-alpha"
         },
         {
-          "id": "del-popolo",
-          "title": "Del Popolo",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-5.png"
+          "id": "lap2",
+          "title": "Flexible Usage",
+          "description": "Use for business expansion or personal needs",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/loans-for-personal-needs-lap-bt-v1?scl=1&fmt=png-alpha"
         },
         {
-          "id": "square-pie-guys",
-          "title": "Square Pie Guys",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-1.png"
-        },
-        {
-          "id": "zero-zero",
-          "title": "Zero Zero",
-          "url": "https://persistent.oaistatic.com/pizzaz/pizzaz-2.png"
+          "id": "lap3",
+          "title": "Long Repayment",
+          "description": "Tenure up to 20 years",
+          "url": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/loans-for-personal-needs-lap-bt-v1?scl=1&fmt=png-alpha"
         }
       ]
     }

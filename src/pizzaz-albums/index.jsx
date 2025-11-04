@@ -2,14 +2,14 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import useEmblaCarousel from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import albumsData from "./albums.json";
+import loansData from "./albums.json";
 import { useMaxHeight } from "../use-max-height";
 import { useOpenAiGlobal } from "../use-openai-global";
 import FullscreenViewer from "./FullscreenViewer";
 import AlbumCard from "./AlbumCard";
 
-function AlbumsCarousel({ onSelect }) {
-  const albums = albumsData?.albums || [];
+function LoansCarousel({ onSelect }) {
+  const loanTypes = loansData?.loanTypes || [];
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
     loop: false,
@@ -36,11 +36,11 @@ function AlbumsCarousel({ onSelect }) {
   }, [emblaApi]);
 
   return (
-    <div className="antialiased relative w-full text-black py-5 select-none">
+    <div className="antialiased relative w-full py-5 select-none" style={{ backgroundColor: '#002953', color: 'white' }}>
       <div className="overflow-hidden max-sm:mx-5" ref={emblaRef}>
         <div className="flex gap-5 items-stretch">
-          {albums.map((album) => (
-            <AlbumCard key={album.id} album={album} onSelect={onSelect} />
+          {loanTypes.map((loanType) => (
+            <AlbumCard key={loanType.id} album={loanType} onSelect={onSelect} />
           ))}
         </div>
       </div>
@@ -52,8 +52,9 @@ function AlbumsCarousel({ onSelect }) {
         }
       >
         <div
-          className="h-full w-full border-l border-black/15 bg-gradient-to-r from-black/10 to-transparent"
+          className="h-full w-full border-l bg-gradient-to-r from-[#ff8900]/30 to-transparent"
           style={{
+            borderColor: '#ff8900',
             WebkitMaskImage:
               "linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)",
             maskImage:
@@ -69,8 +70,9 @@ function AlbumsCarousel({ onSelect }) {
         }
       >
         <div
-          className="h-full w-full border-r border-black/15 bg-gradient-to-l from-black/10 to-transparent"
+          className="h-full w-full border-r bg-gradient-to-l from-[#ff8900]/30 to-transparent"
           style={{
+            borderColor: '#ff8900',
             WebkitMaskImage:
               "linear-gradient(to bottom, transparent 0%, white 30%, white 70%, transparent 100%)",
             maskImage:
@@ -81,7 +83,8 @@ function AlbumsCarousel({ onSelect }) {
       {canPrev && (
         <button
           aria-label="Previous"
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-white text-black shadow-lg ring ring-black/5 hover:bg-white"
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full shadow-lg ring"
+          style={{ backgroundColor: '#ff8900', color: 'white', ringColor: 'rgba(255, 137, 0, 0.3)' }}
           onClick={() => emblaApi && emblaApi.scrollPrev()}
           type="button"
         >
@@ -95,7 +98,8 @@ function AlbumsCarousel({ onSelect }) {
       {canNext && (
         <button
           aria-label="Next"
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-white text-black shadow-lg ring ring-black/5 hover:bg-white"
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 inline-flex items-center justify-center h-8 w-8 rounded-full shadow-lg ring"
+          style={{ backgroundColor: '#ff8900', color: 'white', ringColor: 'rgba(255, 137, 0, 0.3)' }}
           onClick={() => emblaApi && emblaApi.scrollNext()}
           type="button"
         >
@@ -112,11 +116,11 @@ function AlbumsCarousel({ onSelect }) {
 
 function App() {
   const displayMode = useOpenAiGlobal("displayMode");
-  const [selectedAlbum, setSelectedAlbum] = React.useState(null);
+  const [selectedLoan, setSelectedLoan] = React.useState(null);
   const maxHeight = useMaxHeight() ?? undefined;
 
-  const handleSelectAlbum = (album) => {
-    setSelectedAlbum(album);
+  const handleSelectLoan = (loanType) => {
+    setSelectedLoan(loanType);
     if (window?.webplus?.requestDisplayMode) {
       window.webplus.requestDisplayMode({ mode: "fullscreen" });
     }
@@ -128,14 +132,15 @@ function App() {
       style={{
         maxHeight,
         height: displayMode === "fullscreen" ? maxHeight : undefined,
+        backgroundColor: displayMode === "fullscreen" ? '#002953' : 'transparent',
       }}
     >
       {displayMode !== "fullscreen" && (
-        <AlbumsCarousel onSelect={handleSelectAlbum} />
+        <LoansCarousel onSelect={handleSelectLoan} />
       )}
 
-      {displayMode === "fullscreen" && selectedAlbum && (
-        <FullscreenViewer album={selectedAlbum} />
+      {displayMode === "fullscreen" && selectedLoan && (
+        <FullscreenViewer album={selectedLoan} />
       )}
     </div>
   );

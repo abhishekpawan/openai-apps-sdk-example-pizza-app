@@ -1,24 +1,29 @@
 import React from "react";
 
 export default function FilmStrip({ album, selectedIndex, onSelect }) {
+  const details = album?.details || [];
+
   return (
     <div className="h-full w-full overflow-auto flex flex-col items-center justify-center p-5 space-y-5">
-      {album.photos.map((photo, idx) => (
+      {details.map((detail, idx) => (
         <button
-          key={photo.id}
+          key={detail.id}
           type="button"
           onClick={() => onSelect?.(idx)}
           className={
-            "block w-full p-[1px] pointer-events-auto rounded-[10px] cursor-pointer border transition-[colors,opacity] " +
+            "block w-full p-[2px] pointer-events-auto rounded-[10px] cursor-pointer border transition-[colors,opacity] " +
             (idx === selectedIndex
-              ? "border-black"
-              : "border-black/0 hover:border-black/30 opacity-60 hover:opacity-100")
+              ? "opacity-100"
+              : "opacity-60 hover:opacity-100")
           }
+          style={{
+            borderColor: idx === selectedIndex ? '#ff8900' : 'transparent',
+          }}
         >
           <div className="aspect-[5/3] rounded-lg overflow-hidden w-full">
             <img
-              src={photo.url}
-              alt={photo.title || `Photo ${idx + 1}`}
+              src={detail.url}
+              alt={detail.title || `Detail ${idx + 1}`}
               className="h-full w-full object-cover"
               loading="lazy"
             />

@@ -34,34 +34,47 @@ function multiEntryDevEndpoints(options: {
     perEntryCssIgnore = ["**/*.module.*"],
   } = options;
 
-  const V_PREFIX = "\0multi-entry:"; // Rollup “virtual module” prefix
+  const V_PREFIX = "\0multi-entry:"; // Rollup "virtual module" prefix
 
-  const HIDE_FROM_HOME = new Set(["flashcards", "daw"]);
+  const HIDE_FROM_HOME = new Set(["flashcards", "daw", "pizzaz"]);
+
+  // Friendly display names for loan widgets
+  const FRIENDLY_NAMES: Record<string, string> = {
+    "pizzaz-albums": "Loan Products Gallery",
+    "pizzaz-carousel": "Loan Products Carousel",
+    "pizzaz-list": "Loan Products List",
+  };
+
+  const getDisplayName = (name: string): string => {
+    return FRIENDLY_NAMES[name] || name;
+  };
 
   const renderIndexHtml = (names: string[]): string => `<!doctype html>
 <html>
 <head>
   <meta charset="utf-8" />
-  <title>ecosystem ui examples</title>
+  <title>Bajaj Finserv Loan Products</title>
   <style>
-    body { font: 15px/1.5 system-ui, sans-serif; margin: 32px; color: #1f2933; }
-    h1 { font-size: 20px; margin-bottom: 12px; }
-    ul { padding-left: 18px; }
-    li { margin-bottom: 6px; }
-    a { color: #2563eb; text-decoration: none; }
+    body { font: 15px/1.5 system-ui, sans-serif; margin: 32px; color: #002953; background-color: #f5f5f5; }
+    h1 { font-size: 24px; margin-bottom: 16px; color: #002953; font-weight: 600; }
+    ul { padding-left: 18px; list-style: none; }
+    li { margin-bottom: 8px; }
+    a { color: #ff8900; text-decoration: none; font-weight: 500; }
     a:hover { text-decoration: underline; }
     code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; margin-left: 6px; color: #64748b; }
   </style>
 </head>
 <body>
-  <h1>Examples</h1>
+  <h1>Bajaj Finserv Loan Products</h1>
   <ul>
     ${names
       .filter((n) => !HIDE_FROM_HOME.has(n))
       .toSorted()
       .map(
         (name) =>
-          `<li><a href="/${name}.html">${name}</a><code>/${name}.html</code></li>`
+          `<li><a href="/${name}.html">${getDisplayName(
+            name
+          )}</a><code>/${name}.html</code></li>`
       )
       .join("\n    ")}
   </ul>

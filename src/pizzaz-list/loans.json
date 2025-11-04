@@ -1,0 +1,67 @@
+{
+  "loanProducts": [
+    {
+      "id": "personal-loan",
+      "name": "Personal Loan",
+      "category": "Unsecured Loans",
+      "rating": 4.8,
+      "interestRate": "11% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/personal-loan"
+    },
+    {
+      "id": "gold-loan",
+      "name": "Gold Loan",
+      "category": "Secured Loans",
+      "rating": 4.9,
+      "interestRate": "9.5% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/gold-loan-14-08-2025?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/gold-loan"
+    },
+    {
+      "id": "home-loan",
+      "name": "Home Loan",
+      "category": "Property Loans",
+      "rating": 4.7,
+      "interestRate": "8.5% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/home-loan-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/home-loan"
+    },
+    {
+      "id": "business-loan",
+      "name": "Business Loan",
+      "category": "Business Finance",
+      "rating": 4.6,
+      "interestRate": "12% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/business-loan"
+    },
+    {
+      "id": "car-loan",
+      "name": "Car Loan",
+      "category": "Vehicle Finance",
+      "rating": 4.7,
+      "interestRate": "8.5% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/electronics-on-emis-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/two-wheeler-loan"
+    },
+    {
+      "id": "education-loan",
+      "name": "Education Loan",
+      "category": "Education Finance",
+      "rating": 4.6,
+      "interestRate": "10.5% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/home-loan-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/education-loan"
+    },
+    {
+      "id": "loan-against-property",
+      "name": "Loan Against Property",
+      "category": "Secured Loans",
+      "rating": 4.5,
+      "interestRate": "10% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/loans-for-personal-needs-lap-bt-v1?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/loan-against-property"
+    }
+  ]
+}
