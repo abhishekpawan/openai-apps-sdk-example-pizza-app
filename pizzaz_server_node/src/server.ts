@@ -87,12 +87,12 @@ function widgetMeta(widget: LoanWidget) {
 const widgets: LoanWidget[] = [
   {
     id: "pizza-carousel",
-    title: "Show Loan Carousel",
+    title: "Show Loan List",
     templateUri: "ui://widget/pizza-carousel.html",
-    invoking: "Loading loan carousel",
-    invoked: "Displayed loan carousel",
+    invoking: "Loading loan list",
+    invoked: "Displayed loan list",
     html: readWidgetHtml("pizzaz-carousel"),
-    responseText: "Rendered loan carousel!",
+    responseText: "Rendered loan list!",
   },
   {
     id: "pizza-albums",
