@@ -7,7 +7,10 @@ import { useWidgetProps } from "../use-widget-props";
 function App() {
   // Get the loan type from widget props, default to personal-loan
   const props = useWidgetProps();
-  const loanType = props?.loanProduct || "personal-loan";
+  const rawLoanType = props?.loanProduct || "personal-loan";
+  
+  // Normalize the loan type: convert spaces to hyphens and lowercase
+  const loanType = rawLoanType.toLowerCase().replace(/\s+/g, '-');
   
   // Get the specific loan details
   const loan = loansData.loanTypes[loanType];
@@ -20,7 +23,10 @@ function App() {
             Loan Information Not Found
           </h1>
           <p className="mt-2" style={{ color: '#002953', opacity: 0.7 }}>
-            The requested loan type "{loanType}" is not available.
+            The requested loan type "{rawLoanType}" is not available.
+          </p>
+          <p className="mt-4 text-sm" style={{ color: '#002953', opacity: 0.5 }}>
+            Available loan types: personal-loan, gold-loan, home-loan, business-loan, car-loan, loan-against-property
           </p>
         </div>
       </div>
