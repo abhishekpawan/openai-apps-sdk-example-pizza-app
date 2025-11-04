@@ -44,6 +44,9 @@ function multiEntryDevEndpoints(options: {
     "pizzaz-carousel": "Loan Products Carousel",
     "pizzaz-list": "Loan Products List",
     "loan-details": "Loan Details",
+    "personal-loan-details": "Personal Loan Details",
+    "gold-loan-details": "Gold Loan Details",
+    "business-loan-details": "Business Loan Details",
   };
 
   const getDisplayName = (name: string): string => {
