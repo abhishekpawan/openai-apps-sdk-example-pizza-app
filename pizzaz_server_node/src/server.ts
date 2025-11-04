@@ -26,7 +26,7 @@ import {
 } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
 
-type PizzazWidget = {
+type LoanWidget = {
   id: string;
   title: string;
   templateUri: string;
@@ -74,7 +74,7 @@ function readWidgetHtml(componentName: string): string {
   return htmlContents;
 }
 
-function widgetMeta(widget: PizzazWidget) {
+function widgetMeta(widget: LoanWidget) {
   return {
     "openai/outputTemplate": widget.templateUri,
     "openai/toolInvocation/invoking": widget.invoking,
@@ -84,47 +84,38 @@ function widgetMeta(widget: PizzazWidget) {
   } as const;
 }
 
-const widgets: PizzazWidget[] = [
-  {
-    id: "pizza-map",
-    title: "Show Pizza Map",
-    templateUri: "ui://widget/pizza-map.html",
-    invoking: "Hand-tossing a map",
-    invoked: "Served a fresh map",
-    html: readWidgetHtml("pizzaz"),
-    responseText: "Rendered a pizza map!",
-  },
+const widgets: LoanWidget[] = [
   {
     id: "pizza-carousel",
-    title: "Show Pizza Carousel",
+    title: "Show Loan Carousel",
     templateUri: "ui://widget/pizza-carousel.html",
-    invoking: "Carousel some spots",
-    invoked: "Served a fresh carousel",
+    invoking: "Loading loan carousel",
+    invoked: "Displayed loan carousel",
     html: readWidgetHtml("pizzaz-carousel"),
-    responseText: "Rendered a pizza carousel!",
+    responseText: "Rendered loan carousel!",
   },
   {
     id: "pizza-albums",
-    title: "Show Pizza Album",
+    title: "Show Loan Products",
     templateUri: "ui://widget/pizza-albums.html",
-    invoking: "Hand-tossing an album",
-    invoked: "Served a fresh album",
+    invoking: "Loading loan products",
+    invoked: "Displayed loan products",
     html: readWidgetHtml("pizzaz-albums"),
-    responseText: "Rendered a pizza album!",
+    responseText: "Rendered loan products gallery!",
   },
   {
     id: "pizza-list",
-    title: "Show Pizza List",
+    title: "Show Loan List",
     templateUri: "ui://widget/pizza-list.html",
-    invoking: "Hand-tossing a list",
-    invoked: "Served a fresh list",
+    invoking: "Loading loan list",
+    invoked: "Displayed loan list",
     html: readWidgetHtml("pizzaz-list"),
-    responseText: "Rendered a pizza list!",
+    responseText: "Rendered loan list!",
   },
 ];
 
-const widgetsById = new Map<string, PizzazWidget>();
-const widgetsByUri = new Map<string, PizzazWidget>();
+const widgetsById = new Map<string, LoanWidget>();
+const widgetsByUri = new Map<string, LoanWidget>();
 
 widgets.forEach((widget) => {
   widgetsById.set(widget.id, widget);
@@ -134,17 +125,17 @@ widgets.forEach((widget) => {
 const toolInputSchema = {
   type: "object",
   properties: {
-    pizzaTopping: {
+    loanProduct: {
       type: "string",
-      description: "Topping to mention when rendering the widget.",
+      description: "Loan product to mention when rendering the widget.",
     },
   },
-  required: ["pizzaTopping"],
+  required: ["loanProduct"],
   additionalProperties: false,
 } as const;
 
 const toolInputParser = z.object({
-  pizzaTopping: z.string(),
+  loanProduct: z.string(),
 });
 
 const tools: Tool[] = widgets.map((widget) => ({
@@ -177,10 +168,10 @@ const resourceTemplates: ResourceTemplate[] = widgets.map((widget) => ({
   _meta: widgetMeta(widget),
 }));
 
-function createPizzazServer(): Server {
+function createLoanServer(): Server {
   const server = new Server(
     {
-      name: "pizzaz-node",
+      name: "bajaj-loans-node",
       version: "0.1.0",
     },
     {
@@ -253,7 +244,7 @@ function createPizzazServer(): Server {
           },
         ],
         structuredContent: {
-          pizzaTopping: args.pizzaTopping,
+          loanProduct: args.loanProduct,
         },
         _meta: widgetMeta(widget),
       };
@@ -275,7 +266,7 @@ const postPath = "/mcp/messages";
 
 async function handleSseRequest(res: ServerResponse) {
   res.setHeader("Access-Control-Allow-Origin", "*");
-  const server = createPizzazServer();
+  const server = createLoanServer();
   const transport = new SSEServerTransport(postPath, res);
   const sessionId = transport.sessionId;
 
@@ -377,7 +368,9 @@ httpServer.on("clientError", (err: Error, socket) => {
 });
 
 httpServer.listen(port, () => {
-  console.log(`Pizzaz MCP server listening on http://localhost:${port}`);
+  console.log(
+    `Bajaj Finserv Loans MCP server listening on http://localhost:${port}`
+  );
   console.log(`  SSE stream: GET http://localhost:${port}${ssePath}`);
   console.log(
     `  Message post endpoint: POST http://localhost:${port}${postPath}?sessionId=...`
