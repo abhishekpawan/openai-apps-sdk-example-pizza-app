@@ -262,7 +262,7 @@ function createLoanServer(): Server {
       if (widget.id === "loan-details") {
         const args = loanDetailsInputParser.parse(request.params.arguments ?? {});
         structuredContent = {
-          loanType: args.loanType,
+          loanProduct: args.loanType,
         };
       } else if (widget.id === "loan-carousel") {
         const args = loanCarouselInputParser.parse(request.params.arguments ?? {});

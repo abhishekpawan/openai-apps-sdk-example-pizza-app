@@ -7,10 +7,7 @@ import { useWidgetProps } from "../use-widget-props";
 function App() {
   // Get the loan type from widget props, default to personal-loan
   const props = useWidgetProps();
-  const rawLoanType = props?.loanProduct || "personal-loan";
-  
-  // Normalize the loan type: convert spaces to hyphens and lowercase
-  const loanType = rawLoanType.toLowerCase().replace(/\s+/g, '-');
+  const loanType = props?.loanProduct || "personal-loan";
   
   // Get the specific loan details
   const loan = loansData.loanTypes[loanType];
