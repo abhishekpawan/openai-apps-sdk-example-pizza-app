@@ -86,50 +86,50 @@ function widgetMeta(widget: LoanWidget) {
 
 const widgets: LoanWidget[] = [
   {
-    id: "pizza-carousel",
+    id: "loan-carousel",
     title: "Show Loan List",
-    templateUri: "ui://widget/pizza-carousel.html",
+    templateUri: "ui://widget/loan-carousel.html",
     invoking: "Loading loan list",
     invoked: "Displayed loan list",
-    html: readWidgetHtml("pizzaz-carousel"),
+    html: readWidgetHtml("loan-carousel"),
     responseText: "Rendered loan list!",
   },
-  {
-    id: "personal-loan-details",
-    title: "Show Personal Loan Details",
-    templateUri: "ui://widget/personal-loan-details.html",
-    invoking: "Loading personal loan details",
-    invoked: "Displayed personal loan details",
-    html: readWidgetHtml("personal-loan-details"),
-    responseText: "Rendered personal loan information with all details including interest rates, tenure, eligibility, and documents required!",
-  },
-  {
-    id: "gold-loan-details",
-    title: "Show Gold Loan Details",
-    templateUri: "ui://widget/gold-loan-details.html",
-    invoking: "Loading gold loan details",
-    invoked: "Displayed gold loan details",
-    html: readWidgetHtml("gold-loan-details"),
-    responseText: "Rendered gold loan information with all details including interest rates, tenure, eligibility, and documents required!",
-  },
-  {
-    id: "business-loan-details",
-    title: "Show Business Loan Details",
-    templateUri: "ui://widget/business-loan-details.html",
-    invoking: "Loading business loan details",
-    invoked: "Displayed business loan details",
-    html: readWidgetHtml("business-loan-details"),
-    responseText: "Rendered business loan information with all details including interest rates, tenure, eligibility, and documents required!",
-  },
   // {
-  //   id: "loan-details",
-  //   title: "Show Loan Details",
-  //   templateUri: "ui://widget/loan-details.html",
-  //   invoking: "Loading loan details",
-  //   invoked: "Displayed loan details",
-  //   html: readWidgetHtml("loan-details"),
-  //   responseText: "Rendered detailed loan information!",
+  //   id: "personal-loan-details",
+  //   title: "Show Personal Loan Details",
+  //   templateUri: "ui://widget/personal-loan-details.html",
+  //   invoking: "Loading personal loan details",
+  //   invoked: "Displayed personal loan details",
+  //   html: readWidgetHtml("personal-loan-details"),
+  //   responseText: "Rendered personal loan information with all details including interest rates, tenure, eligibility, and documents required!",
   // },
+  // {
+  //   id: "gold-loan-details",
+  //   title: "Show Gold Loan Details",
+  //   templateUri: "ui://widget/gold-loan-details.html",
+  //   invoking: "Loading gold loan details",
+  //   invoked: "Displayed gold loan details",
+  //   html: readWidgetHtml("gold-loan-details"),
+  //   responseText: "Rendered gold loan information with all details including interest rates, tenure, eligibility, and documents required!",
+  // },
+  // {
+  //   id: "business-loan-details",
+  //   title: "Show Business Loan Details",
+  //   templateUri: "ui://widget/business-loan-details.html",
+  //   invoking: "Loading business loan details",
+  //   invoked: "Displayed business loan details",
+  //   html: readWidgetHtml("business-loan-details"),
+  //   responseText: "Rendered business loan information with all details including interest rates, tenure, eligibility, and documents required!",
+  // },
+  {
+    id: "loan-details",
+    title: "Show Loan Details",
+    templateUri: "ui://widget/loan-details.html",
+    invoking: "Loading loan details",
+    invoked: "Displayed loan details",
+    html: readWidgetHtml("loan-details"),
+    responseText: "Rendered detailed loan information!",
+  },
   // {
   //   id: "pizza-albums",
   //   title: "Show Loan Products",
@@ -159,26 +159,58 @@ widgets.forEach((widget) => {
   widgetsByUri.set(widget.templateUri, widget);
 });
 
-const toolInputSchema = {
+// Input schema for loan-carousel widget
+const loanCarouselInputSchema = {
   type: "object",
   properties: {
-    loanProduct: {
+    loanCategory: {
       type: "string",
-      description: "Loan product to mention when rendering the widget.",
+      description: "Category of loans to display in the carousel (e.g., 'all', 'secured', 'unsecured').",
     },
   },
-  required: ["loanProduct"],
+  required: [],
   additionalProperties: false,
 } as const;
 
-const toolInputParser = z.object({
-  loanProduct: z.string(),
+// Input schema for loan-details widget
+const loanDetailsInputSchema = {
+  type: "object",
+  properties: {
+    loanType: {
+      type: "string",
+      enum: ["personal-loan", "gold-loan", "business-loan"],
+      description: "Type of loan to display details for. Must be one of: 'personal-loan', 'gold-loan', or 'business-loan'.",
+    },
+  },
+  required: ["loanType"],
+  additionalProperties: false,
+} as const;
+
+// Zod parsers for runtime validation
+const loanCarouselInputParser = z.object({
+  loanCategory: z.string().optional(),
 });
+
+const loanDetailsInputParser = z.object({
+  loanType: z.enum(["personal-loan", "gold-loan", "business-loan"]),
+});
+
+// Helper function to get the appropriate schema for each widget
+function getInputSchemaForWidget(widgetId: string) {
+  switch (widgetId) {
+    case "loan-carousel":
+      return loanCarouselInputSchema;
+    case "loan-details":
+      return loanDetailsInputSchema;
+    default:
+      return loanCarouselInputSchema; // fallback
+  }
+}
 
 const tools: Tool[] = widgets.map((widget) => ({
   name: widget.id,
   description: widget.title,
-  inputSchema: toolInputSchema,
+  inputSchema: getInputSchemaForWidget(widget.id),
   title: widget.title,
   _meta: widgetMeta(widget),
   // To disable the approval prompt for the widgets
@@ -271,7 +303,22 @@ function createLoanServer(): Server {
         throw new Error(`Unknown tool: ${request.params.name}`);
       }
 
-      const args = toolInputParser.parse(request.params.arguments ?? {});
+      let structuredContent: any;
+
+      if (widget.id === "loan-details") {
+        const args = loanDetailsInputParser.parse(request.params.arguments ?? {});
+        structuredContent = {
+          loanType: args.loanType,
+        };
+      } else if (widget.id === "loan-carousel") {
+        const args = loanCarouselInputParser.parse(request.params.arguments ?? {});
+        structuredContent = {
+          loanCategory: args.loanCategory || "all",
+        };
+      } else {
+        // Default fallback for any other widgets
+        structuredContent = request.params.arguments ?? {};
+      }
 
       return {
         content: [
@@ -280,9 +327,7 @@ function createLoanServer(): Server {
             text: widget.responseText,
           },
         ],
-        structuredContent: {
-          loanProduct: args.loanProduct,
-        },
+        structuredContent,
         _meta: widgetMeta(widget),
       };
     }
