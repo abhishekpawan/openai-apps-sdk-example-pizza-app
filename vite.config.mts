@@ -41,9 +41,9 @@ function multiEntryDevEndpoints(options: {
   // Friendly display names for loan widgets
   const FRIENDLY_NAMES: Record<string, string> = {
     "pizzaz-albums": "Loan Products Gallery",
-    "pizzaz-carousel": "Loan Products Carousel",
     "pizzaz-list": "Loan Products List",
     "loan-details": "Loan Details",
+    "loan-carousel": "Loan Products Carousel",
     "personal-loan-details": "Personal Loan Details",
     "gold-loan-details": "Gold Loan Details",
     "business-loan-details": "Business Loan Details",

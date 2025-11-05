@@ -112,4 +112,4 @@ function App() {
   );
 }
 
-createRoot(document.getElementById("pizzaz-carousel-root")).render(<App />);
+createRoot(document.getElementById("loan-carousel-root")).render(<App />);
