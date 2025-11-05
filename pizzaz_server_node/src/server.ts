@@ -132,8 +132,8 @@ const loanDetailsInputSchema = {
   properties: {
     loanType: {
       type: "string",
-      enum: ["personal-loan", "gold-loan", "business-loan"],
-      description: "Type of loan to display details for. Must be one of: 'personal-loan', 'gold-loan', or 'business-loan'.",
+      enum: ["personal-loan", "gold-loan", "home-loan", "business-loan", "car-loan", "loan-against-property"],
+      description: "Type of loan to display details for. Must be one of: 'personal-loan', 'gold-loan', 'home-loan', 'business-loan', 'car-loan', or 'loan-against-property'.",
     },
   },
   required: ["loanType"],
@@ -146,7 +146,7 @@ const loanCarouselInputParser = z.object({
 });
 
 const loanDetailsInputParser = z.object({
-  loanType: z.enum(["personal-loan", "gold-loan", "business-loan"]),
+  loanType: z.enum(["personal-loan", "gold-loan", "home-loan", "business-loan", "car-loan", "loan-against-property"]),
 });
 
 // Helper function to get the appropriate schema for each widget

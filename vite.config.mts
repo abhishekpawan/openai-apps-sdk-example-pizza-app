@@ -42,11 +42,14 @@ function multiEntryDevEndpoints(options: {
   const FRIENDLY_NAMES: Record<string, string> = {
     "pizzaz-albums": "Loan Products Gallery",
     "pizzaz-list": "Loan Products List",
-    "loan-details": "Loan Details",
+    "loan-details": "Loan Details (Dynamic)",
     "loan-carousel": "Loan Products Carousel",
     "personal-loan-details": "Personal Loan Details",
     "gold-loan-details": "Gold Loan Details",
     "business-loan-details": "Business Loan Details",
+    "home-loan-details": "Home Loan Details",
+    "car-loan-details": "Car Loan Details",
+    "loan-against-property-details": "Loan Against Property Details",
   };
 
   const getDisplayName = (name: string): string => {

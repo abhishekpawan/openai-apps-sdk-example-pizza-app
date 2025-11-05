@@ -1,7 +1,73 @@
 import React, { useState, useEffect } from "react";
 import { CheckCircle2, FileText, User, Calendar, Percent, IndianRupee, ArrowRight } from "lucide-react";
 
-export default function LoanDetailCard({ loan }) {
+// Skeleton Loader Component
+const SkeletonLoader = () => {
+  return (
+    <div className="antialiased w-full max-w-6xl mx-auto p-4 sm:p-6 animate-pulse">
+      {/* Header Section Skeleton */}
+      <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div className="flex flex-col md:flex-row">
+          {/* Image Skeleton */}
+          <div className="md:w-1/2 lg:w-3/5 p-6">
+            <div className="bg-gray-200 rounded-lg" style={{ height: '270px', maxWidth: '480px', margin: '0 auto' }}></div>
+          </div>
+          
+          {/* Details Skeleton */}
+          <div className="md:w-1/2 lg:w-2/5 p-6 pl-3 flex flex-col justify-center space-y-3">
+            <div className="h-8 bg-gray-200 rounded w-3/4"></div>
+            <div className="h-6 bg-gray-200 rounded w-1/2"></div>
+            <div className="space-y-2 mt-4">
+              <div className="h-4 bg-gray-200 rounded"></div>
+              <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Quick Info Grid Skeleton */}
+      <div className="mt-4 sm:mt-6 bg-white rounded-2xl shadow-lg overflow-hidden p-4 sm:p-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="space-y-2">
+              <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+              <div className="h-6 bg-gray-200 rounded"></div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-6 pt-6 border-t" style={{ borderColor: 'rgba(0, 41, 83, 0.1)' }}>
+          <div className="h-12 bg-gray-200 rounded-full"></div>
+        </div>
+      </div>
+
+      {/* Key Features Skeleton */}
+      <div className="mt-4 sm:mt-6 bg-white rounded-2xl shadow-lg overflow-hidden p-4 sm:p-6">
+        <div className="h-6 bg-gray-200 rounded w-1/4 mb-4"></div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="h-4 bg-gray-200 rounded"></div>
+          ))}
+        </div>
+      </div>
+
+      {/* Eligibility & Documents Skeleton */}
+      <div className="mt-4 sm:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        {[1, 2].map((i) => (
+          <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden p-4 sm:p-6">
+            <div className="h-6 bg-gray-200 rounded w-1/3 mb-4"></div>
+            <div className="space-y-2">
+              {[1, 2, 3].map((j) => (
+                <div key={j} className="h-4 bg-gray-200 rounded"></div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default function LoanDetailCard({ loan, isLoading = false }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = loan?.images || [loan?.thumbnail];
   const hasMultipleImages = images.length > 1;
@@ -24,7 +90,10 @@ export default function LoanDetailCard({ loan }) {
     setCurrentImageIndex((prev) => (prev + 1) % images.length);
   };
 
-  if (!loan) return null;
+  // Show skeleton loader while loading
+  if (isLoading || !loan) {
+    return <SkeletonLoader />;
+  }
 
   return (
     <div className="antialiased w-full max-w-6xl mx-auto p-4 sm:p-6">
