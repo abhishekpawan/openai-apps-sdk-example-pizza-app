@@ -15,16 +15,13 @@ const PER_ENTRY_CSS_IGNORE = "**/*.module.*".split(",").map((s) => s.trim());
 const GLOBAL_CSS_LIST = [path.resolve("src/index.css")];
 
 const targets: string[] = [
-  "todo",
-  "solar-system",
-  "pizzaz",
-  "pizzaz-list",
-  "pizzaz-albums",
+  // "todo",
+  // "solar-system",
+  // "pizzaz",
+  // "pizzaz-list",
+  // "pizzaz-albums",
   "loan-carousel",
   "loan-details",
-  "personal-loan-details",
-  "gold-loan-details",
-  "business-loan-details",
 ];
 const builtNames: string[] = [];
 
@@ -166,8 +163,8 @@ console.groupEnd();
 
 console.log("new hash: ", h);
 
-const defaultBaseUrl = "https://openai-app-sdk-examples-assets.onrender.com";
-const baseUrlCandidate = process.env.BASE_URL?.trim() ?? "";
+const defaultBaseUrl = "http://localhost:4444";;
+const baseUrlCandidate = process.env.BASE_URL?.trim() ? `${process.env.BASE_URL?.trim()}/assets` : "";
 const baseUrlRaw = baseUrlCandidate.length > 0 ? baseUrlCandidate : defaultBaseUrl;
 const normalizedBaseUrl = baseUrlRaw.replace(/\/+$/, "") || defaultBaseUrl;
 console.log(`Using BASE_URL ${normalizedBaseUrl} for generated HTML`);

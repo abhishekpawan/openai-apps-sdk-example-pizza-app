@@ -94,33 +94,6 @@ const widgets: LoanWidget[] = [
     html: readWidgetHtml("loan-carousel"),
     responseText: "Rendered loan list!",
   },
-  // {
-  //   id: "personal-loan-details",
-  //   title: "Show Personal Loan Details",
-  //   templateUri: "ui://widget/personal-loan-details.html",
-  //   invoking: "Loading personal loan details",
-  //   invoked: "Displayed personal loan details",
-  //   html: readWidgetHtml("personal-loan-details"),
-  //   responseText: "Rendered personal loan information with all details including interest rates, tenure, eligibility, and documents required!",
-  // },
-  // {
-  //   id: "gold-loan-details",
-  //   title: "Show Gold Loan Details",
-  //   templateUri: "ui://widget/gold-loan-details.html",
-  //   invoking: "Loading gold loan details",
-  //   invoked: "Displayed gold loan details",
-  //   html: readWidgetHtml("gold-loan-details"),
-  //   responseText: "Rendered gold loan information with all details including interest rates, tenure, eligibility, and documents required!",
-  // },
-  // {
-  //   id: "business-loan-details",
-  //   title: "Show Business Loan Details",
-  //   templateUri: "ui://widget/business-loan-details.html",
-  //   invoking: "Loading business loan details",
-  //   invoked: "Displayed business loan details",
-  //   html: readWidgetHtml("business-loan-details"),
-  //   responseText: "Rendered business loan information with all details including interest rates, tenure, eligibility, and documents required!",
-  // },
   {
     id: "loan-details",
     title: "Show Loan Details",
@@ -130,25 +103,6 @@ const widgets: LoanWidget[] = [
     html: readWidgetHtml("loan-details"),
     responseText: "Rendered detailed loan information!",
   },
-  // {
-  //   id: "pizza-albums",
-  //   title: "Show Loan Products",
-  //   templateUri: "ui://widget/pizza-albums.html",
-  //   invoking: "Loading loan products",
-  //   invoked: "Displayed loan products",
-  //   html: readWidgetHtml("pizzaz-albums"),
-  //   responseText: "Rendered loan products gallery!",
-  // },
-  // Disabled pizza-list tool to prioritize carousel
-  // {
-  //   id: "pizza-list",
-  //   title: "Show Loan List",
-  //   templateUri: "ui://widget/pizza-list.html",
-  //   invoking: "Loading loan list",
-  //   invoked: "Displayed loan list",
-  //   html: readWidgetHtml("pizzaz-list"),
-  //   responseText: "Rendered loan list!",
-  // },
 ];
 
 const widgetsById = new Map<string, LoanWidget>();
@@ -430,6 +384,62 @@ const httpServer = createServer(
       return;
     }
 
+        // Serve static files from assets folder
+    if (req.method === "GET" && url.pathname.startsWith("/assets/")) {
+      const filePath = path.join(ASSETS_DIR, url.pathname.replace("/assets/", ""));
+      
+      // Security check: ensure the path is within ASSETS_DIR
+      const normalizedPath = path.normalize(filePath);
+      
+      console.log(`Static file request: ${url.pathname}`);
+      console.log(`Resolved path: ${normalizedPath}`);
+      console.log(`ASSETS_DIR: ${ASSETS_DIR}`);
+      
+      if (!normalizedPath.startsWith(ASSETS_DIR)) {
+        console.log(`Access denied - path outside assets directory`);
+        res.writeHead(403).end("Forbidden");
+        return;
+      }
+
+      // Check if file exists
+      if (!fs.existsSync(normalizedPath)) {
+        console.log(`File not found: ${normalizedPath}`);
+        res.writeHead(404).end("File not found");
+        return;
+      }
+
+      // Determine content type based on file extension
+      const ext = path.extname(normalizedPath).toLowerCase();
+      const contentTypes: { [key: string]: string } = {
+        ".html": "text/html",
+        ".js": "application/javascript",
+        ".css": "text/css",
+        ".json": "application/json",
+        ".png": "image/png",
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".gif": "image/gif",
+        ".svg": "image/svg+xml",
+        ".ico": "image/x-icon",
+      };
+      const contentType = contentTypes[ext] || "application/octet-stream";
+
+      try {
+        const fileContent = fs.readFileSync(normalizedPath);
+        console.log(`Serving file: ${normalizedPath} (${fileContent.length} bytes)`);
+        res.writeHead(200, {
+          "Content-Type": contentType,
+          "Access-Control-Allow-Origin": "*",
+        });
+        res.end(fileContent);
+        return;
+      } catch (error) {
+        console.error("Error serving static file:", error);
+        res.writeHead(500).end("Internal Server Error");
+        return;
+      }
+    }
+
     if (req.method === "GET" && url.pathname === ssePath) {
       await handleSseRequest(res);
       return;
@@ -439,7 +449,6 @@ const httpServer = createServer(
       await handlePostMessage(req, res, url);
       return;
     }
-
     res.writeHead(404).end("Not Found");
   }
 );
@@ -457,4 +466,6 @@ httpServer.listen(port, () => {
   console.log(
     `  Message post endpoint: POST http://localhost:${port}${postPath}?sessionId=...`
   );
+  console.log(`  Static assets: http://localhost:${port}/assets/`);
+  console.log(`  Assets directory: ${ASSETS_DIR}`);
 });
