@@ -1,6 +1,24 @@
 {
   "loanProducts": [
     {
+      "id": "doctor-loan",
+      "name": "Doctor Loan",
+      "description": "Expand your medical practice with tailored financing for doctors.",
+      "rating": 4.7,
+      "interestRate": "11.5% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/DL_PDP_image_1?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/doctor-loan"
+    },
+    {
+      "id": "business-loan",
+      "name": "Business Loan",
+      "description": "Grow your business with quick disbursal and collateral-free loans.",
+      "rating": 4.6,
+      "interestRate": "12% p.a.",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha",
+      "applyUrl": "https://www.bajajfinserv.in/business-loan"
+    },
+    {
       "id": "personal-loan",
       "name": "Personal Loan",
       "description": "Quick approval with minimal documentation for all your personal needs.",
@@ -26,15 +44,6 @@
       "interestRate": "8.5% p.a.",
       "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/home-loan-prime-theme?scl=1&fmt=png-alpha",
       "applyUrl": "https://www.bajajfinserv.in/home-loan"
-    },
-    {
-      "id": "business-loan",
-      "name": "Business Loan",
-      "description": "Grow your business with quick disbursal and collateral-free loans.",
-      "rating": 4.6,
-      "interestRate": "12% p.a.",
-      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/personal-loan-prime-theme?scl=1&fmt=png-alpha",
-      "applyUrl": "https://www.bajajfinserv.in/business-loan"
     },
     {
       "id": "car-loan",

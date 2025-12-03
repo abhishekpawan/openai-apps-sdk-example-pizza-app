@@ -240,7 +240,7 @@ export default function LoanDetailCard({ loan, isLoading = false }) {
       </div>
 
       {/* Key Features */}
-      <div className="mt-4 sm:mt-6 bg-white rounded-2xl shadow-lg overflow-hidden">
+      {/* <div className="mt-4 sm:mt-6 bg-white rounded-2xl shadow-lg overflow-hidden">
         <div className="p-4 sm:p-6">
           <h2 className="text-lg sm:text-xl font-semibold flex items-center gap-2" style={{ color: '#002953' }}>
             <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6" style={{ color: '#ff8900' }} />
@@ -257,11 +257,10 @@ export default function LoanDetailCard({ loan, isLoading = false }) {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Eligibility & Documents Grid */}
-      <div className="mt-4 sm:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-        {/* Eligibility Criteria */}
+      {/* <div className="mt-4 sm:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
           <div className="p-4 sm:p-6">
             <h2 className="text-lg sm:text-xl font-semibold flex items-center gap-2" style={{ color: '#002953' }}>
@@ -281,7 +280,6 @@ export default function LoanDetailCard({ loan, isLoading = false }) {
           </div>
         </div>
 
-        {/* Documents Required */}
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
           <div className="p-4 sm:p-6">
             <h2 className="text-lg sm:text-xl font-semibold flex items-center gap-2" style={{ color: '#002953' }}>
@@ -300,7 +298,7 @@ export default function LoanDetailCard({ loan, isLoading = false }) {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

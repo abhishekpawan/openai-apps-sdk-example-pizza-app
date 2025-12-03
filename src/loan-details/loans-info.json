@@ -242,6 +242,54 @@
         "Property valuation report"
       ],
       "applyUrl": "https://www.bajajfinserv.in/loan-against-property"
+    },
+    "doctor-loan": {
+      "id": "doctor-loan",
+      "name": "Doctor Loan",
+      "tagline": "Expand your medical practice with tailored financing",
+      "description": "Designed exclusively for medical professionals, our doctor loans help you expand your practice, set up new clinics, upgrade medical equipment, or manage your medical business needs. Enjoy quick approval, minimal documentation, and flexible repayment options tailored for doctors.",
+      "interestRate": "11.5% p.a.",
+      "minRate": "11.50",
+      "maxRate": "22",
+      "loanAmount": "₹1 Lakh - ₹80 Lakh",
+      "tenure": "12 - 84 months",
+      "processingFee": "Up to 3.5% + GST",
+      "thumbnail": "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/DL_PDP_image_1?scl=1&fmt=png-alpha",
+      "images": [
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/DL_PDP_image_1?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/DL_PDP_image_4?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/DL_PDP_image_2?scl=1&fmt=png-alpha",
+        "https://cms-assets.bajajfinserv.in/is/image/bajajfinance/DL_PDP_image_5?scl=1&fmt=png-alpha"
+
+      ],
+      "features": [
+        "Quick disbursal within 24-48 hours",
+        "Minimal documentation required",
+        "Flexible repayment tenure up to 84 months",
+        "No collateral needed (unsecured option)",
+        "Pre-approved offers for existing customers",
+        "Flexi loan facility available",
+        "Part-payment and foreclosure options",
+        "Tailored for medical professionals"
+      ],
+      "eligibility": [
+        "Qualification: MBBS, MD, MS, BDS, MDS, or equivalent medical degree",
+        "Age: 25 to 65 years",
+        "Practice vintage: Minimum 2 years",
+        "Valid medical registration certificate",
+        "Minimum annual income: ₹3 Lakh",
+        "Good credit score preferred"
+      ],
+      "documents": [
+        "Identity proof (Aadhaar/PAN/Passport)",
+        "Address proof",
+        "Medical degree certificate",
+        "Medical registration certificate",
+        "Income proof (ITR/Form 16/Bank statements)",
+        "Bank statements (Last 6 months)",
+        "Clinic/practice proof (if applicable)"
+      ],
+      "applyUrl": "https://www.bajajfinserv.in/doctor-loan"
     }
   }
 }
