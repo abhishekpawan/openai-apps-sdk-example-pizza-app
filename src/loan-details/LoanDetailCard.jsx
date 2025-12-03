@@ -41,17 +41,17 @@ const SkeletonLoader = () => {
       </div>
 
       {/* Key Features Skeleton */}
-      <div className="mt-4 sm:mt-6 bg-white rounded-2xl shadow-lg overflow-hidden p-4 sm:p-6">
+      {/* <div className="mt-4 sm:mt-6 bg-white rounded-2xl shadow-lg overflow-hidden p-4 sm:p-6">
         <div className="h-6 bg-gray-200 rounded w-1/4 mb-4"></div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[1, 2, 3, 4].map((i) => (
             <div key={i} className="h-4 bg-gray-200 rounded"></div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Eligibility & Documents Skeleton */}
-      <div className="mt-4 sm:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+      {/* <div className="mt-4 sm:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {[1, 2].map((i) => (
           <div key={i} className="bg-white rounded-2xl shadow-lg overflow-hidden p-4 sm:p-6">
             <div className="h-6 bg-gray-200 rounded w-1/3 mb-4"></div>
@@ -62,7 +62,7 @@ const SkeletonLoader = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
